@@ -40,9 +40,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Mobil</th>
-                                <th scope="col">Harga sewa /Hari</th>
-                                <th scope="col">Harga sewa /6 Jam</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Negara</th>
+                                <th scope="col">Waktu Daftar</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                             </thead>
@@ -50,18 +51,26 @@
                             @foreach ($data as $item)
                             <tr>
                                 <th scope="row">{{$loop->iteration}}</th>
-                                <td>{{ Illuminate\Support\Str::limit($item->nama, 20)}}</td>
-                                <td>Rp. {{$item->harga_hari}}</td>
-                                <td>Rp. {{$item->harga_jam}}</td>
+                                <td>{{ $item->nama}}</td>
+                                <td>{{$item->negara}}</td>
+                                <td>{{date('d F Y', strtotime($item->created_at))}}</td>
+                                <td>
+                                    @if ($item->status == 0)
+                                        <span class="badge badge-warning">Belum diverifikasi</span>
+                                    @elseif($item->status == 1)
+                                        <span class="badge badge-success">Qualified</span>
+                                    @elseif($item->status == 2)
+                                        <span class="badge badge-danger">Not Qualified</span>
+                                    @endif
+                                </td>
                                 <td class="d-flex flex-row">
-                                    <form action="{{url('deleteMobil')}}" method="post">
+                                    <form action="{{url('deleteStudent')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$item->id}}">
                                         <input type="hidden" name="judul" value="{{$item->nama}}">
                                         <button type="submit" onclick="return confirm('Are You Sure?')" class="ml-2 btn btn-danger btn-sm mr-2"><i class="mdi mdi-trash-can"></i></button>
                                     </form>
-                                    <a href="{{url('admin/mobil/detail/'.$item->id)}}" class="btn btn-secondary btn-sm mr-2"><i class="mdi mdi-search-web"></i></a>
-                                    <a href="{{url('admin/mobil/ubah/'.$item->id)}}" class="btn btn-info btn-sm"><i class="mdi mdi-pencil"></i></a>
+                                    <a href="{{url()->current().'/'.$item->id}}" class="btn btn-info btn-sm mr-2"><i class="mdi mdi-search-web"></i></a>
                                 </td>
                             </tr>
                             @endforeach

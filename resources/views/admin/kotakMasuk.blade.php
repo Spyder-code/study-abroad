@@ -42,7 +42,9 @@
                                 <th scope="col">No</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Subjek</th>
                                 <th scope="col">Pesan</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -52,7 +54,9 @@
                                 <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{$item->nama}}</td>
                                 <td>{{$item->email}}</td>
-                                <td>{{$item->pesan}}</td>
+                                <td>{{$item->subjek}}</td>
+                                <td>{{$item->isi}}</td>
+                                <td>{{$item->status}}</td>
                                 <td class="d-flex flex-row">
                                     <form action="{{url('deletePesan')}}" method="post">
                                         @csrf

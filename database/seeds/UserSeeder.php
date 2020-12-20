@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@yahoo.com',
             'password' => Hash::make('admin123'),
+            'image' => 'default.jpg'
         ]);
 
         $admin->assignRole('admin');
@@ -25,6 +26,7 @@ class UserSeeder extends Seeder
             'name' => 'Super User',
             'email' => 'super@yahoo.com',
             'password' => Hash::make('admin123'),
+            'image' => 'default.jpg'
         ]);
 
         $superUser->assignRole('superUser');

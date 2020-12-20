@@ -37,13 +37,26 @@
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col col-4">
-                                    <label for="address">Username</label>
+                                    <label for="address">Name</label>
                                 </div>
                                 <div class="col col-2">
                                     <label for="">:</label>
                                 </div>
                                 <div class="col">
                                     {{$user->name}}
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col col-4">
+                                    <label for="address">Email</label>
+                                </div>
+                                <div class="col col-2">
+                                    <label for="">:</label>
+                                </div>
+                                <div class="col">
+                                    {{$user->email}}
                                 </div>
                             </div>
                         </li>
@@ -64,7 +77,7 @@
                     @endif
                     <h4>Ganti Foto Profil</h4>
                     <hr>
-                <form  method="post" action="{{url('changeImageUser')}}" enctype="multipart/form-data">
+                <form  method="post" action="{{url('changeImageUserAdmin')}}" enctype="multipart/form-data">
                     @csrf
                     <input type="file" id="img" class="file" name="image"/>
                     <span class="text-danger">{{ $errors->first('images') }}</span>
@@ -74,7 +87,7 @@
                 </form>
                 <h4 class="mt-5">Ganti Password</h4>
                 <hr>
-                <form class="form-row"  method="post" action="{{url('updatePassword')}}">
+                <form class="form-row"  method="post" action="{{url('updatePasswordAdmin')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{ $user->id }}">
                     <div class="col">
@@ -91,14 +104,14 @@
                         <button type="submit" class="btn btn-success mb-2 float-right mr-5">Change</button>
                     </div>
                 </form>
-                <h4 class="mt-2">Ganti Username</h4>
+                <h4 class="mt-2">Ganti Email</h4>
                 <hr>
-                <form class="form-row"  method="post" action="{{url('updateUsername')}}">
+                <form class="form-row"  method="post" action="{{url('updateEmailAdmin')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{ $user->id }}">
-                    <label for="pass1">Username</label>
+                    <label for="pass1">New Email</label>
                         <div class="form-group d-flex">
-                            <input type="text" class="form-control" name="username">
+                            <input type="text" class="form-control" name="email">
                             <button type="submit" class="btn btn-success mb-2 float-right ml-5">Change</button>
                         </div>
                 </form>

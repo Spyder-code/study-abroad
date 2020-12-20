@@ -43,10 +43,10 @@
         <div class="card bg-gradient-danger card-img-holder text-white">
             <div class="card-body">
             <img src="{{ asset('admin/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-            <h4 class="font-weight-normal mb-3">Total Mobil <i class="mdi mdi-car mdi-24px float-right"></i>
+            <h4 class="font-weight-normal mb-3">Total Pendaftar <i class="mdi mdi-account mdi-24px float-right"></i>
             </h4>
             <h2 class="mb-5">12 unit</h2>
-            <h6 class="card-text">Total Semua mobil terdaftar</h6>
+            <h6 class="card-text">Total Semua Calon Mahasiswa</h6>
             </div>
         </div>
         </div>

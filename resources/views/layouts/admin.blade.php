@@ -15,9 +15,9 @@
     <script src="{{asset('admin/vendors/js/vendor.bundle.base.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/dataTables.css')}}">
     <link href="{{asset('admin/css/tabel.css')}}" rel="stylesheet">
-    @livewireStyles
     <script type="text/javascript" charset="utf8" src="{{asset('admin/js/dataTables.js')}}"></script>
     <script src="{{asset('admin/js/tabel.js')}}"></script>
+    @yield('head')
     <style>
         #headerJudul{
             margin-right: 250px;
@@ -110,7 +110,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{url('admin/list-pendaftar')}}">
                     <span class="menu-title">List Pendaftar</span>
-                    <i class="mdi mdi-car menu-icon"></i>
+                    <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -136,19 +136,19 @@
             <li class="nav-item">
               <a class="nav-link" href="{{url('super/tambah-admin')}}">
                 <span class="menu-title">Tambah Admin</span>
-                <i class="mdi mdi-account menu-icon"></i>
+                <i class="mdi mdi-account-multiple-plus menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('super/admin-activity')}}">
                 <span class="menu-title">Admin Activity</span>
-                <i class="mdi mdi-upload menu-icon"></i>
+                <i class="mdi mdi-cached menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('super/laporan')}}">
                 <span class="menu-title">Laporan</span>
-                <i class="mdi mdi-upload menu-icon"></i>
+                <i class="mdi mdi-clipboard-text menu-icon"></i>
               </a>
             </li>
             @endif
@@ -168,13 +168,13 @@
 
           </div>
           <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
+          {{-- <!-- partial:../../partials/_footer.html -->
           <footer class="footer text-center">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="http://spydercode.site/" target="_blank">Spydercode</a>. All rights reserved.</span>
             </div>
           </footer>
-          <!-- partial -->
+          <!-- partial --> --}}
         </div>
         <!-- main-panel ends -->
       </div>
@@ -188,7 +188,6 @@
     <script src="{{asset('admin/js/hoverable-collapse.js')}}"></script>
     <script src="{{asset('admin/js/misc.js')}}"></script>
     <script src="{{asset('admin/js/dashboard.js')}}"></script>
-    @livewireScripts
     @yield('custom-script')
     <!-- endinject -->
     <!-- Custom js for this page -->

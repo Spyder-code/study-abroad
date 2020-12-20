@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Activity;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class LoginController extends Controller
 {
@@ -39,10 +41,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
+
     public function authenticated(Request $request, $user)
     {
         if ($user->hasRole('admin')) {
+            Activity::create([
+                'user_id' => Auth::user()->id,
+                'nama' => 'Login',
+                'subjek' => 'Login akun admin',
+            ]);
             return redirect()->route('admin.page');
         }
 
@@ -51,6 +58,11 @@ class LoginController extends Controller
 
     public function logout()
     {
+        Activity::create([
+            'user_id' => Auth::user()->id,
+            'nama' => 'Logout',
+            'subjek' => 'Logout akun admin',
+        ]);
         Auth::logout();
         return redirect('login');
     }
