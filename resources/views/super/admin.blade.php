@@ -138,7 +138,7 @@
                                     <input type="hidden" name="judul" value="{{$item->nama}}">
                                     <button type="submit" onclick="return confirm('Are You Sure?')" class="ml-2 btn btn-danger">Hapus</button>
                                 </form>
-                                <form action="{{url('deletePesan')}}" method="post">
+                                <form action="{{url('deleteAdmin')}}" method="post">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$item->id}}">
                                     <input type="hidden" name="judul" value="{{$item->nama}}">

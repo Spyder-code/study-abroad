@@ -199,7 +199,7 @@ class AdminController extends Controller
         $data = array('name'=>$user->nama, "body" => $val);
         Mail::send('emails', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)->subject('Rigistration Study Abroad');
-        $message->from('luaysyauqillah@gmail.com','UINSA International Office');
+        $message->from('office@spydercode.my.id','UINSA International Office');
         });
 
         return redirect('admin/list-pendaftar')->with('success','Verifikasi Dokumen Sukses');

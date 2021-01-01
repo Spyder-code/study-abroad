@@ -135,6 +135,20 @@ class SuperController extends Controller
         return back()->with('success','Activity berhasil di hapus!');
     }
 
+    public function deleteAdmin(Request $request)
+    {
+        User::destroy($request->id);
+        return back()->with('success','Admin berhasil di hapus!');
+    }
+
+    public function resetPassword(Request $request)
+    {
+        User::find($request->id)->update([
+            'password' => Hash::make('admin123')
+        ]);
+        return back()->with('success','Password berhasil ke reset menjadi "admin123"!');
+    }
+
     public function laporan()
     {
         $aktivitas = Activity::all()->sortByDesc('created_at');

@@ -46,6 +46,8 @@ Route::group(['middleware' => ['role:superUser']], function () {
     Route::post('updateEmail', 'SuperController@changeEmail');
     Route::post('addAdmin', 'SuperController@addAdmin');
     Route::post('deleteActivity', 'SuperController@deleteActivity');
+    Route::post('deleteAdmin', 'SuperController@deleteAdmin');
+    Route::post('resetPassword', 'SuperController@resetPassword');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
