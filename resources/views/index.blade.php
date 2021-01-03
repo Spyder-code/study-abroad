@@ -415,7 +415,7 @@
                 </div>
             </div>
             <div class="col-sm-5">
-              <h2>Document</h2>
+              <h2>Document<sup><small class="text-danger"> (Document must .pdf file)</small></sup></h2>
               <hr>
               <div class="form-group" data-aos="fade-up" data-aos-delay="100">
                 <label for="name">1. Application Form. <a href="{{ asset('application_form.pdf') }}">Click here to download</a></label><br>
@@ -547,8 +547,8 @@
           <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100">
             <h4>How's the mechanism of UINSA International Program Registration?</h4>
             <ol>
-              <li>Download application form, Click here</li>
-              <li>Fullfil Registration form, Click here </li>
+              <li>Download application form, <a href="{{ asset('application_form.pdf') }}">Click here to download</a></li>
+              <li>Fullfil Registration form, <a href="#team">Click here to download</a> </li>
               <li>Check Registration Status</li>
             </ol>
           </div>
@@ -652,14 +652,14 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-info">
+          <div class="col-lg-4 col-md-6 footer-info">
             <h3>UINSA</h3>
             <h4>Inbound Study Abroad</h4>
             <p>Jl. Ahmad Yani No.117, Jemur Wonosari, Kec. Wonocolo<br>
               Kota Surabaya, Jawa Timur 60237<br><br></p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -670,7 +670,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Contact</h4>
               <strong>Phone:</strong> (031) 8410298<br>
               <strong>Email:</strong> humas@uinsby.ac.id<br>
@@ -684,13 +684,13 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
+            {{-- <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
 
-          </div>
+          </div> --}}
 
         </div>
       </div>
